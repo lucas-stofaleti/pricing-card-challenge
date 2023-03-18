@@ -25,7 +25,6 @@ h1, h2, p {
     height: 400px;
     box-shadow: 3px 3px 11px -3px rgba(0,0,0,0.75);
     border-radius: 5px;
-    overflow: hidden;
 }
 
 
@@ -57,12 +56,14 @@ h1, h2, p {
     width: 100%;
     height: 55%;
     color: white;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #bottom-left {
     display: inline-block;
-    width: 50%;
     height: 100%;
+    flex-basis: 50%;
     vertical-align: top;
     background-color: hsl(179, 62%, 43%);
     padding: 25px;
@@ -70,8 +71,8 @@ h1, h2, p {
 
 #bottom-right {
     display: inline-block;
-    width: 50%;
     height: 100%;
+    flex-basis: 50%;
     vertical-align: top;
     background-color: hsl(179, 62%, 43%);
     opacity: 0.8;
@@ -134,8 +135,11 @@ li {
 }
 
 @media only screen and (max-width: 650px) {
-    #bottom-left, #bottom-right, #card {
+    #card {
         width: 100%;
         height: auto;
+    }
+    #bottom {
+        flex-direction: column;
     }
 }
